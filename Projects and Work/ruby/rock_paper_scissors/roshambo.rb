@@ -2,8 +2,6 @@ puts "[1] Rock"
 puts "[2] Paper"
 puts "[3] Scissors"
 
-Encoding.default_external = Encoding::UTF_8
-Encoding.default_internal = Encoding::UTF_8
 playing = true
 
 while playing
@@ -13,10 +11,12 @@ while playing
 
   while i > 0
     print "I choose: "
-    player_choice = gets.chomp.to_i
+    player_choice = gets.chomp.to_i 
 
-    opponent_choice = rand(3)+1 # Gets a number between 1-3
+    opponent_choice = rand(3)+1 # Gets a number between 1-3 (Computer's choice)
     
+    # Checks what you chose and gives points/ties depending on the computers choice and users choice. 
+    #[Rock]
     if player_choice == 1
       if(opponent_choice == 1)
         puts "You both chose rock (Tied)"
@@ -27,8 +27,9 @@ while playing
         puts "You chose rock and the computer chose scissors (1 point to you)"
         player_points += 1
       end
-
-    elsif player_choice == 2
+      
+    # [Paper]
+    elsif player_choice == 2 
       if(opponent_choice == 1)
         puts "You chose paper and the computer chose rock (1 point to you)"
         player_points += 1
@@ -38,8 +39,9 @@ while playing
         puts "You chose paper and the computer chose scissors (1 point to the computer)"
         opponent_points += 1
       end
-      
-    elsif player_choice == 3
+
+    # [Scissors]
+    elsif player_choice == 3 
       if(opponent_choice == 1)
         puts "You chose scissors and the computer chose rock (1 point to the computer)"
         opponent_points += 1
@@ -58,8 +60,8 @@ while playing
   end
 
  
-
-  if(player_points > opponent_points)
+  
+  if(player_points > opponent_points) # Checks points of computer and player, tells who won and then asks if you want to play again
     puts "You won! Wanna play again? (y/n)"
     if(gets.chomp == "y")
       playing = true
