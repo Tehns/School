@@ -23,7 +23,7 @@ index = bin.length - 1
 
 puts "\n/*Pre-conversion: \nindex: #{index}\nbin: #{bin}\n*/\n"
 while index >= 0
-  nibble = bin[index-3..index]
+  nibble = bin[(index-3)..index]
   hex_index = nibble_to_int(nibble)
 
   hex = HEX_DIGITS[hex_index] + hex

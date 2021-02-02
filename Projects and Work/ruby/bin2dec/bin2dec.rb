@@ -1,5 +1,6 @@
-print "Insert binary: "
-bin = gets.chomp
+bin = ARGV[0]
+
+puts "Binary: #{bin}"
 
 if(bin.match?(/[^0-1]/))
     puts "Invalid input! (0 and 1 only)"
