@@ -4,7 +4,7 @@ puts "Binary: #{bin}"
 
 if(bin.match?(/[^0-1]/))
     puts "Invalid input! (0 and 1 only)"
-    return
+    exit(0)
 else
     dec = 0
     pow = 0
